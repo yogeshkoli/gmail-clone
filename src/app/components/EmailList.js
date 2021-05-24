@@ -12,6 +12,7 @@ import EmailSection from './EmailSection';
 import InboxIcon from '@material-ui/icons/Inbox';
 import PersonIcon from '@material-ui/icons/Person';
 import LocalOfferIcon from '@material-ui/icons/LocalOffer';
+import EmailRow from './EmailRow';
 
 function EmailList() {
     return (
@@ -52,6 +53,20 @@ function EmailList() {
                 <EmailSection Icon={InboxIcon} title="Inbox" color="red" selected />
                 <EmailSection Icon={PersonIcon} title="Social" color="#1A73EB" />
                 <EmailSection Icon={LocalOfferIcon} title="Promotions" color="green" />
+            </div>
+
+            <div className="emailList__list">
+
+                <EmailRow id="1" title="First Email from Elon" subject="Hello World" description="lorem ipsup" time="10am" />
+                <EmailRow id="1" title="First Email from Elon" subject="Hello World" description="lorem ipsup" time="10am" />
+                <EmailRow id="1" title="First Email from Elon" subject="Hello World" description="lorem ipsup" time="10am" />
+                <EmailRow id="1" title="First Email from Elon" subject="Hello World" description="lorem ipsup" time="10am" />
+                <EmailRow id="1" title="First Email from Elon" subject="Hello World" description="lorem ipsup" time="10am" />
+                <EmailRow id="1" title="First Email from Elon" subject="Hello World" description="lorem ipsup" time="10am" />
+                <EmailRow id="1" title="First Email from Elon" subject="Hello World" description="lorem ipsup" time="10am" />
+                <EmailRow id="1" title="First Email from Elon" subject="Hello World" description="lorem ipsup" time="10am" />
+                <EmailRow id="1" title="First Email from Elon" subject="Hello World" description="lorem ipsup" time="10am" />
+
             </div>
         </div>
     );
