@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import Header from './app/components/Header';
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
 
       <Header />
 
-      <h1>Gmail</h1>
+
     </div>
   );
 }

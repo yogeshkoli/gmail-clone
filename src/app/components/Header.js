@@ -1,6 +1,6 @@
 import React from 'react';
 import MenuIcon from '@material-ui/icons/Menu';
-import './Header.css';
+import './Header.scss';
 import { Avatar, IconButton } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
