@@ -7,7 +7,7 @@ import { useForm } from 'react-hook-form';
 
 function SendMail() {
 
-    const { register, handleSubmit, watch, errors } = useForm();
+    const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
     const onSubmit = data => {
         console.log(data);
@@ -26,11 +26,15 @@ function SendMail() {
                     {...register('to', { required: true })}
                 />
 
+                {errors.to && <p className="sendMail__error">To field is required.</p>}
+
                 <input
                     placeholder="Subject"
                     type="text"
                     {...register('subject', { required: true })}
                 />
+
+                {errors.subject && <p className="sendMail__error">Subject field is required.</p>}
 
                 <input
                     {...register('message', { required: true })}
@@ -38,6 +42,8 @@ function SendMail() {
                     placeholder="Type your message here.."
                     type="text"
                 />
+
+                {errors.message && <p className="sendMail__error">Message field is required.</p>}
 
                 <div className="sendMail__options">
                     <Button type="submit" variant="contained" color="primary" className="sendMail__send__button">Send</Button>

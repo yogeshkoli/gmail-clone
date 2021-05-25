@@ -41,6 +41,12 @@
         .sendMail__message{
             flex: 1;
         }
+        .sendMail__error{
+            color: red;
+            background-color: white;
+            padding: 2px;
+            text-align: right;
+        }
         .sendMail__options{
             .sendMail__send__button{
                 background-color: #3079ed !important;
