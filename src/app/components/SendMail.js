@@ -9,29 +9,35 @@ function SendMail() {
 
     const { register, handleSubmit, watch, errors } = useForm();
 
+    const onSubmit = data => {
+        console.log(data);
+    }
+
     return (
         <div className="sendMail">
             <div className="sendMail__header">
                 <h3>New Message</h3>
                 <CloseIcon className="sendMail__close" />
             </div>
-            <form>
-
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <input
-                    name="to"
                     placeholder="To"
-                    type="text" />
+                    type="text"
+                    {...register('to', { required: true })}
+                />
 
                 <input
-                    name="subject"
                     placeholder="Subject"
-                    type="text" />
+                    type="text"
+                    {...register('subject', { required: true })}
+                />
 
                 <input
-                    name="message"
+                    {...register('message', { required: true })}
                     className="sendMail__message"
                     placeholder="Type your message here.."
-                    type="text" />
+                    type="text"
+                />
 
                 <div className="sendMail__options">
                     <Button type="submit" variant="contained" color="primary" className="sendMail__send__button">Send</Button>
