@@ -1,6 +1,6 @@
-import { IconButton } from '@material-ui/core';
+
 import React from 'react';
-import './Mail.scss';
+import { IconButton } from '@material-ui/core';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import MoveToInboxIcon from '@material-ui/icons/MoveToInbox';
 import ErrorIcon from '@material-ui/icons/Error';
@@ -14,6 +14,7 @@ import { useHistory } from 'react-router';
 import UnfoldMoreIcon from '@material-ui/icons/UnfoldMore';
 import PrintIcon from '@material-ui/icons/Print';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import './Mail.scss';
 
 function Mail() {
 

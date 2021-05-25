@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import Mail from './app/components/Mail';
 import EmailList from './app/components/EmailList';
+import SendMail from './app/components/SendMail';
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
             </Route>
           </Switch>
         </div>
-
+        <SendMail />
       </div>
     </Router>
   );
