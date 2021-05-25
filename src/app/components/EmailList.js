@@ -57,8 +57,8 @@ function EmailList() {
 
             <div className="emailList__list">
 
-                <EmailRow id="1" title="First Email from Elon" subject="Hello World" description="lorem ipsup" time="10am" />
-                <EmailRow id="1" title="First Email from Elon" subject="Hello World" description="lorem ipsup" time="10am" />
+                <EmailRow id="1" title="First Email from Elon Musk" subject="Hello World" description="lorem ipsup" time="10am" />
+                <EmailRow id="1" title="First Email from James" subject="Hello World" description="lorem ipsup" time="10am" />
                 <EmailRow id="1" title="First Email from Elon" subject="Hello World" description="lorem ipsup" time="10am" />
                 <EmailRow id="1" title="First Email from Elon" subject="Hello World" description="lorem ipsup" time="10am" />
                 <EmailRow id="1" title="First Email from Elon" subject="Hello World" description="lorem ipsup" time="10am" />

@@ -5,8 +5,7 @@ import Sidebar from './app/components/Sidebar';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import Mail from './app/components/Mail';
 import EmailList from './app/components/EmailList';
@@ -22,7 +21,7 @@ function App() {
           <Sidebar />
 
           <Switch>
-            <Route path="/mai">
+            <Route path="/mail">
               <Mail />
             </Route>
             <Route path="/">
