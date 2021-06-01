@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Checkbox, IconButton } from '@material-ui/core';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import RedoIcon from '@material-ui/icons/Redo';
@@ -13,8 +13,21 @@ import InboxIcon from '@material-ui/icons/Inbox';
 import PersonIcon from '@material-ui/icons/Person';
 import LocalOfferIcon from '@material-ui/icons/LocalOffer';
 import EmailRow from './EmailRow';
+import { db } from '../firebase';
 
 function EmailList() {
+
+    const [emails, setEmails] = useState([]);
+
+    useEffect(() => {
+        db.collection('emails').orderBy('timestamp', 'desc')
+            .onSnapshot(snapshot =>
+                setEmails(snapshot.docs.map(doc => ({
+                    id: doc.id,
+                    data: doc.data()
+                }))));
+    }, []);
+
     return (
         <div className="emailList">
             <div className="emailList__settings">
@@ -57,15 +70,8 @@ function EmailList() {
 
             <div className="emailList__list">
 
-                <EmailRow id="1" title="First Email from Elon Musk" subject="Hello World" description="lorem ipsup" time="10am" />
-                <EmailRow id="1" title="First Email from James" subject="Hello World" description="lorem ipsup" time="10am" />
-                <EmailRow id="1" title="First Email from Elon" subject="Hello World" description="lorem ipsup" time="10am" />
-                <EmailRow id="1" title="First Email from Elon" subject="Hello World" description="lorem ipsup" time="10am" />
-                <EmailRow id="1" title="First Email from Elon" subject="Hello World" description="lorem ipsup" time="10am" />
-                <EmailRow id="1" title="First Email from Elon" subject="Hello World" description="lorem ipsup" time="10am" />
-                <EmailRow id="1" title="First Email from Elon" subject="Hello World" description="lorem ipsup" time="10am" />
-                <EmailRow id="1" title="First Email from Elon" subject="Hello World" description="lorem ipsup" time="10am" />
-                <EmailRow id="1" title="First Email from Elon" subject="Hello World" description="lorem ipsup" time="10am" />
+                {emails.map((id, data) => (<EmailRow id={id} title="First Email from Elon Musk" subject={data.subject} description={data.message} time="10am" />))}
+
 
             </div>
         </div>
