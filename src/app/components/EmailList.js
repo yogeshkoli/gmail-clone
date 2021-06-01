@@ -70,7 +70,16 @@ function EmailList() {
 
             <div className="emailList__list">
 
-                {emails.map((id, data) => (<EmailRow id={id} title="First Email from Elon Musk" subject={data.subject} description={data.message} time="10am" />))}
+                {emails.map(({ id, data }) => (
+                    <EmailRow
+                        id={id}
+                        key={id}
+                        title={data.to}
+                        subject={data.subject}
+                        description={data.message}
+                        time={new Date(data.timestamp?.seconds * 1000).toUTCString()} />
+                )
+                )}
 
 
             </div>
